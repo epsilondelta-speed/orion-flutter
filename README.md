@@ -19,19 +19,51 @@ The `.aar` (Android Archive) in this repository is a prebuilt binary of the Orio
 
 ## 🔧 Usage
 
-### 1. Add GitHub Packages registry to your root `settings.gradle`:
+### 1. Groovy (build.gradle)
 
 ```groovy
-dependencyResolutionManagement {
+// Top-level build.gradle
+allprojects {
     repositories {
         google()
         mavenCentral()
         maven {
+            name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/epsilondelta-speed/orion-flutter-aar")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME_GITHUB")
-                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN_GITHUB")
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
 }
+
+// app/build.gradle
+dependencies {
+    implementation "co.epsilondelta:orion-flutter:1.0.0"
+}
+```
+### 1. Kotlin DSL (build.gradle)
+```kotlin
+// Top-level build.gradle.kts
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/epsilondelta-speed/orion-flutter-aar")
+            credentials {
+                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+}
+
+// module-level build.gradle.kts
+dependencies {
+    implementation("co.epsilondelta:orion-flutter:1.0.0")
+}
+
+```
