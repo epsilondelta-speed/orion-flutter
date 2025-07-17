@@ -8,7 +8,7 @@ This repository contains the compiled Android `.aar` artifact for the [Orion Flu
 
 ## 📦 What is this?
 
-The `.aar` (Android Archive) in this repository is a prebuilt binary of the Orion SDK tailored for hybrid Flutter apps. It enables you to:
+ in this repository is a prebuilt binary of the Orion SDK tailored for hybrid Flutter apps. It enables you to:
 
 - Monitor **screen performance** (TTID, TTFD, janky frames, frozen frames).
 - Track **network requests** per screen.
