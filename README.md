@@ -43,7 +43,7 @@ dependencies {
     implementation "co.epsilondelta:orion-flutter:1.0.0"
 }
 ```
-### 1. Kotlin DSL (build.gradle)
+### 2. Kotlin DSL (build.gradle)
 ```kotlin
 // Top-level build.gradle.kts
 allprojects {
