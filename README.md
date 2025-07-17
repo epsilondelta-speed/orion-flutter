@@ -1,6 +1,6 @@
-# orion-flutter-aar
+# orion-flutter 
 📦 Orion Flutter — Android Flutter Plugin - Performance Monitoring SDK
-# Orion Flutter AAR
+# Orion Flutter 
 
 This repository contains the compiled Android `.aar` artifact for the [Orion Flutter Plugin](https://github.com/epsilondelta-speed/orion_flutter_test1), used to integrate the Orion performance monitoring SDK into Flutter apps.
 
@@ -29,7 +29,7 @@ allprojects {
         mavenCentral()
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/epsilondelta-speed/orion-flutter-aar")
+            url = uri("https://maven.pkg.github.com/epsilondelta-speed/orion-flutter")
             credentials {
                 username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
                 password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
@@ -52,7 +52,7 @@ allprojects {
         mavenCentral()
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/epsilondelta-speed/orion-flutter-aar")
+            url = uri("https://maven.pkg.github.com/epsilondelta-speed/orion-flutter")
             credentials {
                 username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
                 password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
